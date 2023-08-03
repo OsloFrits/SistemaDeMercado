@@ -5,7 +5,7 @@ import Clientes.SinglentonCadastros;
 import java.util.Scanner;
 import java.io.IOException;
 public class Main {
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException, InterruptedException {
 
         Scanner sc = new Scanner(System.in);
         int resp = 0;
@@ -16,64 +16,66 @@ public class Main {
         SinglentonCadastros cadastros = SinglentonCadastros.criarCadastro();
         cadastros.AddCliente(cliente);
 
-        Facade fachada = new Facade();
-        SubFacade fachadinha = fachada.Subfacade();
-
         System.out.println("  __  __                              _   _          _                 _                               ____      \n" +
                 " |  \\/  |  ___   _ _   __   __ _   __| | (_)  _ _   | |_    ___     __| |  ___     ___  ___   _  _    |_  /  ___ \n" +
                 " | |\\/| | / -_) | '_| / _| / _` | / _` | | | | ' \\  | ' \\  / _ \\   / _` | / _ \\   (_-< / -_) | || |    / /  / -_)\n" +
-                " |_|  |_| \\___| |_|   \\__| \\__,_| \\__,_| |_| |_||_| |_||_| \\___/   \\__,_| \\___/   /__/ \\___|  \\_,_|   /___| \\___| V3.00.13.14\n\n");
+                " |_|  |_| \\___| |_|   \\__| \\__,_| \\__,_| |_| |_||_| |_||_| \\___/   \\__,_| \\___/   /__/ \\___|  \\_,_|   /___| \\___| V3.02.14.10\n\n");
         System.out.println("BEM VINDO!!");
         do{
-
+            Facade fachada = new Facade();
             System.out.println("///----//-------------------------COMANDOS-------------------------//----///");
 
             System.out.println("(1)-Realizar Uma Venda\n(2)-Ir para o Sub-Sistema\n(0)-Para sair do programa");
             resp = sc.nextInt();
             switch(resp){
                 case(1):{
+
                     fachada.RealizarVenda();
                     break;
                 }
-                case(2):{
-                    System.out.println("///----//-------------------------Sub-Sistema-------------------------//----///");
-                    System.out.println("(1)-Cadastrar um Pedido.Produto\n(2)-Cadastrar um Clientes.Cliente\n(3)-Verificar Estoque\n(4)-Verificar Cadastros\n(5)-Criar Backup do estoque\n(6)-Restaurar backup do estoque\n(7)-Exportar Estoque\n(8)-Importar Estoque");
-                    int resp1 = sc.nextInt();
-                    switch (resp1){
-                        case(1):{
-                            fachadinha.CadastrarProduto();
-                            break;
+                case(2): {
+                    SubFacade fachadinha = fachada.Subfacade();
+                    int resp1;
+                    do {
+                        System.out.println("///----//-------------------------Sub-Sistema-------------------------//----///");
+                        System.out.println("(1)-Cadastrar um Pedido.Produto\n(2)-Cadastrar um Clientes.Cliente\n(3)-Verificar Estoque\n(4)-Verificar Cadastros\n(5)-Criar Backup do estoque\n(6)-Restaurar backup do estoque\n(7)-Exportar Estoque\n(8)-Importar Estoque\n(0)-Voltar para menu principal");
+                        resp1 = sc.nextInt();
+                        switch (resp1) {
+                            case (1): {
+                                fachadinha.CadastrarProduto();
+                                break;
+                            }
+                            case (2): {
+                                fachadinha.CadastrarCliente();
+                                break;
+                            }
+                            case (3): {
+                                fachadinha.VerificarEstoque();
+                                break;
+                            }
+                            case (4): {
+                                fachadinha.VerificarCadastros();
+                                break;
+                            }
+                            case (5): {
+                                fachadinha.CriarBackup();
+                                break;
+                            }
+                            case (6): {
+                                fachadinha.RestaurarEstoque();
+                                break;
+                            }
+                            case (7): {
+                                fachadinha.FazerBackupBin();
+                                break;
+                            }
+                            case (8): {
+                                fachadinha.RestaurarBackupBin();
+                                break;
+                            }
                         }
-                        case(2):{
-                            fachadinha.CadastrarCliente();
-                            break;
-                        }
-                        case(3):{
-                            fachadinha.VerificarEstoque();
-                            break;
-                        }
-                        case(4):{
-                            fachadinha.VerificarCadastros();
-                            break;
-                        }
-                        case(5):{
-                            fachadinha.CriarBackup();
-                            break;
-                        }
-                        case(6):{
-                            fachadinha.RestaurarEstoque();
-                            break;
-                        }
-                        case(7):{
-                            fachadinha.FazerBackupBin();
-                            break;
-                        }
-                        case(8):{
-                            fachadinha.RestaurarBackupBin();
-                            break;
-                        }
-                    }
-                    break;
+                        System.in.read();//Usado para pausar a tela e possibilitar a leitura das saidas
+                    } while (resp1 != 0);
                 }
             }
             sc.nextLine();

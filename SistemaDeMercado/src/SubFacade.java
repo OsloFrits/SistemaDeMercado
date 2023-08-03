@@ -46,21 +46,25 @@ public class SubFacade {
     }
     public void VerificarEstoque(){
         estoque.VerificacaoDoEstoque();
-        System.out.println("\nDeseja adicionar a uma quantidade no estoque \n(1)-SIM\n(2)-NAO");
-        int resp = sc.nextInt();
-        sc.nextLine();
-        if(resp == 1){
-            System.out.println("Digite o ID do produto e quantidade que sera adicionada ao estoque ");
-            String id = sc.nextLine();
-            int quant = sc.nextInt();
-            if(estoque.ExisteProduto(id)){
-                estoque.Repor(id, quant);
-            }else{
-                System.out.println("Desculpe, produto nao consta no estoque :( ");
-            }
-        }else{
-            System.out.println("//------------// Verificação do estoque concluida //------------// ");
-        }
+       if(estoque.getListaDeProdutos() == null) {
+           System.out.println("\nDeseja adicionar a uma quantidade no estoque \n(1)-SIM\n(2)-NAO");
+           int resp = sc.nextInt();
+           sc.nextLine();
+           if (resp == 1) {
+               System.out.println("Digite o ID do produto e quantidade que sera adicionada ao estoque ");
+               String id = sc.nextLine();
+               int quant = sc.nextInt();
+               if (estoque.ExisteProduto(id)) {
+                   estoque.Repor(id, quant);
+               } else {
+                   System.out.println("Desculpe, produto nao consta no estoque :( ");
+               }
+           } else {
+               System.out.println("//------------// Verificação do estoque concluida //------------// ");
+           }
+       }else{
+           System.out.println("Nao ha estoque");
+       }
     }
     public void VerificarCadastros(){
         cadastros.VerificacaoDosCadastros();

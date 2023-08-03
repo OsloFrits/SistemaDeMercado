@@ -86,6 +86,11 @@ public class SingletonEstoque {//TEORICAMENTE TA TUDO FUNFANDO AQUI
         }
         return false;
     }
+
+    public List<Produto> getListaDeProdutos() {
+        return ListaDeProdutos;
+    }
+
     public void Limpar(){
         ListaDeProdutos.clear();
     }

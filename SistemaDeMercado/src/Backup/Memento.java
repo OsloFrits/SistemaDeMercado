@@ -24,7 +24,7 @@ public class Memento implements Serializable {//NAO TIVE COMO TESTAR PQ PRECISA 
     }
     public void RecuperaBackupBin(){
         List<Object> listinha = Arquivo.RecuperarBackup("Estoque.bin");
-        if(listinha != null) {
+        if(listinha.size() < 0) {
             for (Object recupera : listinha) {
                 Produto prod = (Produto) recupera;
                 estoque.AddProduto(prod);
