@@ -1,3 +1,5 @@
+package Pedido;
+
 import java.io.Serializable;
 
 public class Produto implements Serializable { //TA FUNCIONADO

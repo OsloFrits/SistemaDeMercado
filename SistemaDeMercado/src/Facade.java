@@ -1,3 +1,5 @@
+import Pedido.Pedido;
+
 import java.util.Scanner;
 public class Facade {//ACHO QUE FUNCIONA
     Scanner sc = new Scanner(System.in);

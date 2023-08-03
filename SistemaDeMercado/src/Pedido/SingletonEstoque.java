@@ -1,3 +1,7 @@
+package Pedido;
+
+import Backup.Memento;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -20,12 +24,13 @@ public class SingletonEstoque {//TEORICAMENTE TA TUDO FUNFANDO AQUI
     public void AddProduto(Produto produto){
         ListaDeProdutos.add(produto);
     }
-    public void ProcurarProduto(String id, int quant ,Pedido pedido){
+    public void ProcurarProduto(String id, int quant , Pedido pedido){
+        ItemPedido item;
         for(Produto prod: ListaDeProdutos){
             if(id.equals(prod.getID())){
                if(quant > prod.getQuantidade()){
                    System.out.println("O estoque nao possue essa quantidade" + "\n");
-                   System.out.println("(1)-Pegar tudo no estonque ? \n(0)-Nao Pegar o Produto ! " );
+                   System.out.println("(1)-Pegar tudo no estonque ? \n(0)-Nao Pegar o Pedido.Produto ! " );
                     int resp = sc.nextInt();
                    if(resp == 1){
                        item = new ItemPedido(prod.getID(), prod.getNome(), prod.getQuantidade(), prod.getPreco());
@@ -66,7 +71,7 @@ public class SingletonEstoque {//TEORICAMENTE TA TUDO FUNFANDO AQUI
     public void Repor(String id, int quant){
         for(Produto prod: ListaDeProdutos){
             if(id.equals(prod.getID())){
-                System.out.printf("O Produto: %s de ID: %s tinha em estoque uma quantia de: %d ", prod.getNome(), prod.getID(), prod.getQuantidade());
+                System.out.printf("O Pedido.Produto: %s de ID: %s tinha em estoque uma quantia de: %d ", prod.getNome(), prod.getID(), prod.getQuantidade());
                 prod.setQuantidade(prod.getQuantidade() + quant);
                 System.out.printf("\nAgora ele tem: %d\n", prod.getQuantidade());
                 break;

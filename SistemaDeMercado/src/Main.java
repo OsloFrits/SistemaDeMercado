@@ -1,3 +1,7 @@
+import Pedido.SingletonEstoque;
+import Clientes.Cliente;
+import Clientes.SinglentonCadastros;
+
 import java.util.Scanner;
 import java.io.IOException;
 public class Main {
@@ -33,7 +37,7 @@ public class Main {
                 }
                 case(2):{
                     System.out.println("///----//-------------------------Sub-Sistema-------------------------//----///");
-                    System.out.println("(1)-Cadastrar um Produto\n(2)-Cadastrar um Cliente\n(3)-Verificar Estoque\n(4)-Verificar Cadastros\n(5)-Criar Backup do estoque\n(6)-Restaurar backup do estoque\n(7)-Exportar Estoque\n(8)-Importar Estoque");
+                    System.out.println("(1)-Cadastrar um Pedido.Produto\n(2)-Cadastrar um Clientes.Cliente\n(3)-Verificar Estoque\n(4)-Verificar Cadastros\n(5)-Criar Backup do estoque\n(6)-Restaurar backup do estoque\n(7)-Exportar Estoque\n(8)-Importar Estoque");
                     int resp1 = sc.nextInt();
                     switch (resp1){
                         case(1):{
@@ -77,13 +81,13 @@ public class Main {
         }while(resp!=0);
     }
 }
-
-        /*Produto prod =  new Produto("esponja", "1234", 32,10);
-        Produto prod2 = new Produto("vrido", "4321", 300, 432);
-        Produto prod3 =  new Produto("Pá", "3200", 2,100);
-        Produto prod4 = new Produto("Balas", "2547", 3000, 1.5);
-        Produto prod5 =  new Produto("Melancia", "9865", 10,15);
-        Produto prod6 = new Produto("Carne", "2222", 11, 10000);
+        //Usado para preencher o estaoque de maneira manual
+        /*Pedido.Produto prod =  new Pedido.Produto("esponja", "1234", 32,10);
+        Pedido.Produto prod2 = new Pedido.Produto("vrido", "4321", 300, 432);
+        Pedido.Produto prod3 =  new Pedido.Produto("Pá", "3200", 2,100);
+        Pedido.Produto prod4 = new Pedido.Produto("Balas", "2547", 3000, 1.5);
+        Pedido.Produto prod5 =  new Pedido.Produto("Melancia", "9865", 10,15);
+        Pedido.Produto prod6 = new Pedido.Produto("Carne", "2222", 11, 10000);
         estoque.AddProduto(prod);
         estoque.AddProduto(prod2);
         estoque.AddProduto(prod3);

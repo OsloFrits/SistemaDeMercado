@@ -1,3 +1,5 @@
+package Pedido;
+
 public class ItemPedido {
     private Produto produto;
     private String ID, nome;

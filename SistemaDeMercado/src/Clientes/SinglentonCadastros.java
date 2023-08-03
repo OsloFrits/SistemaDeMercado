@@ -1,3 +1,5 @@
+package Clientes;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -41,7 +43,7 @@ public class SinglentonCadastros {
         int j=1;
         System.out.println("//----------Clientes----------//");
         for(Cliente cliente : cadastros){
-            System.out.printf("------------Cliente numero: %d", j);
+            System.out.printf("------------Clientes.Cliente numero: %d", j);
             s = cliente.informacoesCliente();
             s = "\n" + s + "\n";
             System.out.printf(s);

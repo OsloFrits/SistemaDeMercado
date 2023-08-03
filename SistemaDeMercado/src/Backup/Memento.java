@@ -1,3 +1,8 @@
+package Backup;
+
+import Pedido.SingletonEstoque;
+import Pedido.Produto;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,9 +24,14 @@ public class Memento implements Serializable {//NAO TIVE COMO TESTAR PQ PRECISA 
     }
     public void RecuperaBackupBin(){
         List<Object> listinha = Arquivo.RecuperarBackup("Estoque.bin");
-        for(Object recupera: listinha){
-            Produto prod = (Produto) recupera;
-            estoque.AddProduto(prod);
+        if(listinha != null) {
+            for (Object recupera : listinha) {
+                Produto prod = (Produto) recupera;
+                estoque.AddProduto(prod);
+            }
+            System.out.println("//------------// Estoque Importado //------------// ");
+        }else{
+            System.out.println("SEM BACKUP");
         }
     }
     public void FazerBackupBin(){
@@ -31,5 +41,6 @@ public class Memento implements Serializable {//NAO TIVE COMO TESTAR PQ PRECISA 
             listinha.add(grava);
         }
         Arquivo.GravarBackup(listinha, "Estoque.bin");
+        System.out.println("//------------// Estoque Exportado //------------// ");
     }
 }

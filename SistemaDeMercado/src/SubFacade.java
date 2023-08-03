@@ -1,4 +1,9 @@
-import javax.swing.*;
+import Backup.Memento;
+import Pedido.SingletonEstoque;
+import Clientes.Cliente;
+import Clientes.SinglentonCadastros;
+import Pedido.Produto;
+
 import java.util.Scanner;
 public class SubFacade {
     Scanner sc = new Scanner(System.in);
@@ -12,21 +17,21 @@ public class SubFacade {
         cadastros = SinglentonCadastros.criarCadastro();
     }
     public void CadastrarProduto(){
-        System.out.println("//------------// Cadastro de Produto //------------// ");
+        System.out.println("//------------// Cadastro de Pedido.Produto //------------// ");
         System.out.println("Nome do produto:");
         String nome = sc.nextLine();
         System.out.println("Codigo(ID) do produto:");
         String id = sc.nextLine();
         System.out.println("Quantidade em estoque:");
         int quantidade = sc.nextInt();
-        System.out.println("Valor do Produto:");
+        System.out.println("Valor do Pedido.Produto:");
         double preco = sc.nextDouble();
         estoque.AddProduto(new Produto(nome, id, quantidade, preco));
-        System.out.println(" //------------// Produto Cadastrado e estocado com sucesso //------------// ");
+        System.out.println(" //------------// Pedido.Produto Cadastrado e estocado com sucesso //------------// ");
         sc.nextLine();
     }
     public void CadastrarCliente(){
-        System.out.println("//------------// Cadastro de Cliente //------------// ");
+        System.out.println("//------------// Cadastro de Clientes.Cliente //------------// ");
         System.out.println("Nome do cliente:");
         String nome = sc.nextLine();
         System.out.println("CPF:");
@@ -37,7 +42,7 @@ public class SubFacade {
         System.out.println("Telefone:");
         int telefone = sc.nextInt();
         cadastros.AddCliente(new Cliente(cpf, nome, telefone, endereco));
-        System.out.println("//------------// Cliente Cadastrado com sucesso //------------// ");
+        System.out.println("//------------// Clientes.Cliente Cadastrado com sucesso //------------// ");
     }
     public void VerificarEstoque(){
         estoque.VerificacaoDoEstoque();
@@ -60,14 +65,12 @@ public class SubFacade {
     public void VerificarCadastros(){
         cadastros.VerificacaoDosCadastros();
     }
-    public void RestaurarBackupBin(){//ein espera nao acabei o arquivo
+    public void RestaurarBackupBin(){
         estoque.Limpar();;
         meme.RecuperaBackupBin();
-        System.out.println("//------------// Estoque Importado //------------// ");
     }
-    public void FazerBackupBin(){//ein espera nao acabei o arquivo
+    public void FazerBackupBin(){
         meme.FazerBackupBin();
-        System.out.println("//------------// Estoque Exportado //------------// ");
     }
     public void RestaurarEstoque(){
         if(meme != null){

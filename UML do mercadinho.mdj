@@ -64,7 +64,7 @@
 											"top": 660,
 											"width": 190,
 											"height": 13,
-											"text": "Pedido"
+											"text": "Pedido.Pedido"
 										},
 										{
 											"_type": "LabelView",
@@ -204,7 +204,7 @@
 											"top": 743,
 											"width": 190,
 											"height": 13,
-											"text": "-itemPedido: ItemPedido",
+											"text": "-itemPedido: Pedido.Pedido.ItemPedido",
 											"horizontalAlignment": 0
 										},
 										{
@@ -221,7 +221,7 @@
 											"top": 758,
 											"width": 190,
 											"height": 13,
-											"text": "-cliente: Cliente",
+											"text": "-cliente: Clientes.Cliente",
 											"horizontalAlignment": 0
 										}
 									],
@@ -272,7 +272,7 @@
 											"top": 796,
 											"width": 190,
 											"height": 13,
-											"text": "+AddItem(ItemPedido item)",
+											"text": "+AddItem(Pedido.Pedido.ItemPedido item)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -398,7 +398,7 @@
 											"top": 908,
 											"width": 190,
 											"height": 13,
-											"text": "ItemPedido"
+											"text": "Pedido.Pedido.ItemPedido"
 										},
 										{
 											"_type": "LabelView",
@@ -903,7 +903,7 @@
 											"top": 532,
 											"width": 110,
 											"height": 13,
-											"text": "Cliente"
+											"text": "Clientes.Cliente"
 										},
 										{
 											"_type": "LabelView",
@@ -1116,7 +1116,7 @@
 											"top": 644,
 											"width": 126,
 											"height": 13,
-											"text": "Produto"
+											"text": "Pedido.Produto"
 										},
 										{
 											"_type": "LabelView",
@@ -1435,7 +1435,7 @@
 											"top": 651,
 											"width": 182,
 											"height": 13,
-											"text": "-ListaDeProdutos: Produto",
+											"text": "-ListaDeProdutos: Pedido.Produto",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1452,7 +1452,7 @@
 											"top": 666,
 											"width": 182,
 											"height": 13,
-											"text": "-item: ItemPedido",
+											"text": "-item: Pedido.Pedido.ItemPedido",
 											"horizontalAlignment": 0
 										}
 									],
@@ -1503,7 +1503,7 @@
 											"top": 704,
 											"width": 182,
 											"height": 13,
-											"text": "+AddProduto(Produto produto)",
+											"text": "+AddProduto(Pedido.Produto produto)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2024,7 +2024,7 @@
 											"top": 291,
 											"width": 182,
 											"height": 13,
-											"text": "-pedido: Pedido",
+											"text": "-pedido: Pedido.Pedido",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3170,7 +3170,7 @@
 											"top": 490,
 											"width": 243.87060546875,
 											"height": 13,
-											"text": "-ListaDeProutos: Produto",
+											"text": "-ListaDeProutos: Pedido.Produto",
 											"horizontalAlignment": 0
 										}
 									],
@@ -3204,7 +3204,7 @@
 											"top": 513,
 											"width": 243.87060546875,
 											"height": 13,
-											"text": "+Snapshot(Produto, listaDeProdutos)",
+											"text": "+Snapshot(Pedido.Produto, listaDeProdutos)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -4184,7 +4184,7 @@
 											"top": 452,
 											"width": 143,
 											"height": 13,
-											"text": "Arquivo"
+											"text": "Backup.Arquivo"
 										},
 										{
 											"_type": "LabelView",
@@ -5629,7 +5629,7 @@
 											"top": 420,
 											"width": 150,
 											"height": 13,
-											"text": "Pessoa",
+											"text": "Clientes.Pessoa",
 											"wordWrap": true
 										},
 										{
@@ -7226,7 +7226,7 @@
 							"top": 824,
 							"width": 225,
 							"height": 51,
-							"text": "A classe Pedido ira se comunicar com o estoque a procura de um produto"
+							"text": "A classe Pedido.Pedido ira se comunicar com o estoque a procura de um produto"
 						},
 						{
 							"_type": "UMLNoteLinkView",
@@ -7254,7 +7254,7 @@
 							"top": 976,
 							"width": 169,
 							"height": 51,
-							"text": "Recebe o produto procurado e é colocado na classe do Pedido."
+							"text": "Recebe o produto procurado e é colocado na classe do Pedido.Pedido."
 						},
 						{
 							"_type": "UMLNoteLinkView",
@@ -8909,7 +8909,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Pedido",
+					"name": "Pedido.Pedido",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -9088,7 +9088,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGJCLHV4XRJ7eo="
 									},
-									"name": "ItemPedido item",
+									"name": "Pedido.Pedido.ItemPedido item",
 									"type": ""
 								}
 							]
@@ -9109,7 +9109,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "ItemPedido",
+					"name": "Pedido.Pedido.ItemPedido",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -9183,7 +9183,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Cliente",
+					"name": "Clientes.Cliente",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -9291,7 +9291,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Produto",
+					"name": "Pedido.Produto",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -9497,7 +9497,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGJCM+Gzjxaxio="
 									},
-									"name": "Produto produto",
+									"name": "Pedido.Produto produto",
 									"type": ""
 								}
 							]
@@ -9989,7 +9989,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGJCMc+zTU1Evk="
 									},
-									"name": "Produto",
+									"name": "Pedido.Produto",
 									"type": ""
 								},
 								{
@@ -10035,7 +10035,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Arquivo",
+					"name": "Backup.Arquivo",
 					"stereotype": "Classe",
 					"operations": [
 						{
@@ -10062,7 +10062,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Pessoa",
+					"name": "Clientes.Pessoa",
 					"documentation": "<<abstract>>\n",
 					"stereotype": "abstract",
 					"attributes": [

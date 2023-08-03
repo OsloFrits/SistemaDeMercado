@@ -1,4 +1,6 @@
-public class Cliente extends Pessoa{
+package Clientes;
+
+public class Cliente extends Pessoa {
     private int numero;
     private String endereço;
 
